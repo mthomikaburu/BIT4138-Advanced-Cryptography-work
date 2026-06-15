@@ -1,0 +1,30 @@
+<!-- validation.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cipher Input Validation</title>
+  <script>
+    function validateForm() {
+      let text = document.getElementById("plaintext").value;
+      let key = document.getElementById("key").value;
+      if (text === "" || !/^[A-Za-z]+$/.test(text)) {
+        alert("Plaintext must contain only letters!");
+        return false;
+      }
+      if (key === "" || !/^[A-Za-z]+$/.test(key)) {
+        alert("Key must contain only letters!");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <h2>Classical Cipher Input</h2>
+  <form onsubmit="return validateForm()">
+    Plaintext: <input type="text" id="plaintext"><br><br>
+    Key: <input type="text" id="key"><br><br>
+    <input type="submit" value="Encrypt">
+  </form>
+</body>
+</html>
